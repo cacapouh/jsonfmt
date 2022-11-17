@@ -1,0 +1,4 @@
+.cache
+.nimble
+build
+jsonfmt
