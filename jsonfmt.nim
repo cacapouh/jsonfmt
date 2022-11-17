@@ -24,7 +24,9 @@ proc innerFmt(jsonString: string, state: State, args: Args): string =
     let jsonNode = parseJson(jsonString)
     let fields: OrderedTable[string,JsonNode] = jsonNode.getFields()
 
-    if args.depth <= state.depth:
+    if args.depth == 0:
+        &"{jsonNode}"
+    elif args.depth <= state.depth:
         jsonString
     elif jsonNode.kind == JObject:
         let nextState = state.update(args.indent)
