@@ -35,6 +35,13 @@ proc innerFmt(jsonString: string, state: State, args: Args): string =
             &"\"{key}\": {v}"
         let kvs = fields.keys.toSeq.mapIt(convert(it)).mapIt(&"{nextState.indent()}{it}").join(",\n")
         &"{{\n{kvs}\n}}"
+    elif jsonNode.kind == JArray:
+        let nextState = state.update(args.indent)
+        let convert = proc(elem: JsonNode): string =
+            let v = innerFmt(&"{elem}", nextState, args).replace("\n", &"\n{nextState.indent()}")
+            &"{v}"
+        let elems = jsonNode.getElems().toSeq.mapIt(convert(it)).mapIt(&"{nextState.indent()}{it}").join(",\n")
+        &"[\n{elems}\n]"
     else:
         jsonString
 
