@@ -117,3 +117,10 @@ $ nim c jsonfmt.nim
 ```
 docker run -v $(pwd):/root -v $(pwd)/build:/opt --rm nimlang/nim:1.6.8-ubuntu /bin/bash -c 'cd /root; nimble install -y cligen; nim c jsonfmt.nim; mv jsonfmt /opt';
 ```
+
+## Homebrewでインストール
+
+```
+$ brew tap cacapouh/jsonfmt
+$ brew install cacapouh/jsonfmt/jsonfmt
+```
