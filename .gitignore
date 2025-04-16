@@ -1,4 +1,3 @@
 .cache
 .nimble
 build
-jsonfmt

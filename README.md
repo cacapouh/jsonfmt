@@ -2,6 +2,18 @@
 
 深さを指定してjsonをフォーマットするコマンド
 
+# ビルド
+
+CLIのビルド:
+```
+nim c jsonfmt.nim
+```
+
+JavaScriptのビルド:
+```
+nim js -d:release jsonfmtjs.nim
+```
+
 # デモンストレーション
 
 ```
