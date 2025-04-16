@@ -2802,4 +2802,4 @@ function jsonfmt(jsonString_p0, depth_p1, indent_p2) {
   return result_553648134;
 
 }
-export default { jsonfmt };
+export { jsonfmt };
